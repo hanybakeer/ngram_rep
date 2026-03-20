@@ -6,6 +6,7 @@ This capstone project consolidates the Python programming, software engineering,
 
 The project is structured as four core modules plus one optional extra credit module: data preparation, model training, inference, and a CLI. A Streamlit UI is available as an optional extra credit module.
 
+salma
 
 
 # Requirements
