@@ -1,6 +1,10 @@
-# add mani() if __name__=="__main__"
+# add main() if __name__=="__main__"
 
 # from ast import Load
+from email.mime import text
+import os
+from pickle import load
+from tracemalloc import start
 
 
 class Normalizer:
@@ -15,55 +19,50 @@ class Normalizer:
 
     """
     
-    def load(self, file_path: str) -> str:
-
+    
+    def load(self,folder_path: str) -> str:
         """
-        Load the raw corpus from a file.
-        Parameters:
-            file_path (str): Path to the input corpus file.
-        Returns:
-            str: The raw text loaded from the file.
+        Load all .txt files in a folder.
+        Parameters: folder_path (str): Path to the folder containing .txt files.
+        Returns:str: The raw text loaded from the file.
         """
+        text = ""
+        for filename in os.listdir(folder_path):
+            if filename.endswith(".txt"):
+                file_path = os.path.join(folder_path, filename)
+                with open(file_path, "r", encoding="utf-8") as f:
+                    text += f.read() + "\n"
+        return text
+    
 
-        with open(file_path, "r", encoding="utf-8") as f:
-            return f.read()
+    def strip_gutenberg(self,in_text:str)->str:
+        """
+        This method removes all headers and footers from the text
+        Parameters: text (str)
+        Returns: str without header and footer
+        """
+        text = ""
+        header_pattern = "*** START OF THE PROJECT GUTENBERG EBOOK"
+        footer_pattern = "*** END OF THE PROJECT GUTENBERG EBOOK"
+        header_index = in_text.find(header_pattern)
+        footer_index = in_text.find(footer_pattern)
+        print(header_index) 
+        print(footer_index)
+
         
-    def clean(self, text: str) -> str:
+        part = in_text[header_index:footer_index]
+        part = in_text[3:4]
 
-        """
-        Clean the raw text by removing unwanted characters and normalizing whitespace.
-        Parameters:
-            text (str): The raw text to be cleaned.
-        """
-        # Remove unwanted characters (e.g., punctuation, special characters)
-        cleaned_text = ''.join(char for char in text if char.isalnum() or char.isspace())
-        
-        # Normalize whitespace (e.g., convert multiple spaces to a single space)
-        cleaned_text = ' '.join(cleaned_text.split())
-        
-        return cleaned_text
-    
-    def tokenize(self, text: str) -> list:
+        print(part)
+        #for loop for header array
+        #for loop for footer array
+        #for loop with 3 main ifs(general, and 2 special cases)
 
-        """
-        Tokenize the cleaned text into a list of words.
-        Parameters:
-            text (str): The cleaned text to be tokenized.
-        Returns:
-            list: A list of tokens (words) extracted from the cleaned text.
-        """
-        return text.split() 
-    
-    def save(self, tokens: list, output_path: str) -> None:
 
-        """
-        Save the list of tokens to a file.
-        Parameters:
-            tokens (list): The list of tokens to be saved.
-            output_path (str): Path to the output file where tokens will be saved.
-        """
-        with open(output_path, "w", encoding="utf-8") as f:
-            f.write(' '.join(tokens))
-    
-    
-          
+#tests
+hany = Normalizer().load(r"C:\AI\python\practice\ngram_rep\ngram-predictor\data\raw\train")
+hany2 = Normalizer().strip_gutenberg(hany)
+
+#print(hany)
+
+
