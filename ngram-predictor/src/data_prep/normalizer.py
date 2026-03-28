@@ -1,8 +1,19 @@
-from ast import Load
+# add mani() if __name__=="__main__"
+
+# from ast import Load
 
 
 class Normalizer:
-    "This class describes the module's responsibility: loading, cleaning, tokenizing, and saving the corpus."
+    """
+    This class describes the module's responsibility: loading, cleaning, tokenizing, and saving the corpus.
+
+    Parameters:
+    Text file
+
+    Returns:
+    tokenized file
+
+    """
     
     def load(self, file_path: str) -> str:
 

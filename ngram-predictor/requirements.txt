@@ -1,0 +1,5 @@
+nltk==3.8.1
+python-dotenv==1.0.0
+# Add extra credit libraries below if implemented
+# streamlit==1.35.0
+# pytest==8.2.0

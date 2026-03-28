@@ -6,7 +6,6 @@ This capstone project consolidates the Python programming, software engineering,
 
 The project is structured as four core modules plus one optional extra credit module: data preparation, model training, inference, and a CLI. A Streamlit UI is available as an optional extra credit module.
 
-salma
 
 
 # Requirements
@@ -94,3 +93,16 @@ ngram-predictor/
 ├── requirements.txt
 
 └── README.md
+
+# Env Variables
+
+TRAIN_RAW_DIR=data/raw/train/
+EVAL_RAW_DIR=data/raw/eval/
+TRAIN_TOKENS=data/processed/train_tokens.txt
+EVAL_TOKENS=data/processed/eval_tokens.txt
+MODEL=data/model/model.json
+VOCAB=data/model/vocab.json
+UNK_THRESHOLD=3
+TOP_K=3
+NGRAM_ORDER=4
+# LOG_LEVEL=INFO     # Optional — required for Logging extra credit (§9.4)
