@@ -1,10 +1,11 @@
 # add main() if __name__=="__main__"
 
 # from ast import Load
-from email.mime import text
+#from email.mime import text
 import os
-from pickle import load
-from tracemalloc import start
+import re
+#from pickle import load
+#from tracemalloc import start
 
 
 class Normalizer:
@@ -41,28 +42,27 @@ class Normalizer:
         Parameters: text (str)
         Returns: str without header and footer
         """
-        text = ""
-        header_pattern = "*** START OF THE PROJECT GUTENBERG EBOOK"
-        footer_pattern = "*** END OF THE PROJECT GUTENBERG EBOOK"
-        header_index = in_text.find(header_pattern)
-        footer_index = in_text.find(footer_pattern)
-        print(header_index) 
-        print(footer_index)
-
+        pattern = re.compile(
+        r"\*\*\* START OF THE PROJECT GUTENBERG EBOOK.*?\*\*\*\s*(.*?)\s*\*\*\* END OF THE PROJECT GUTENBERG EBOOK.*?\*\*\*",re.DOTALL)
+        books = pattern.findall(in_text)
+        return "\n\n".join(book.strip() for book in books)
         
-        part = in_text[header_index:footer_index]
-        part = in_text[3:4]
-
-        print(part)
-        #for loop for header array
-        #for loop for footer array
-        #for loop with 3 main ifs(general, and 2 special cases)
+        #text = ""
+        #header_pattern = "*** START OF THE PROJECT GUTENBERG EBOOK"
+        #footer_pattern = "*** END OF THE PROJECT GUTENBERG EBOOK"
+        #header_index = in_text.find(header_pattern)
+        #footer_index = in_text.find(footer_pattern)
+        #print(header_index) 
+        #print(footer_index)
+        #part = in_text[header_index:footer_index]
+        #part = in_text[3:4]
 
 
 #tests
-hany = Normalizer().load(r"C:\AI\python\practice\ngram_rep\ngram-predictor\data\raw\train")
+#hany = Normalizer().load(r"C:\AI\python\practice\ngram_rep\ngram-predictor\data\raw\train")
+hany = Normalizer().load(r"D:\AI\Python\practice\ngram_capstone\ngram_rep\ngram-predictor\data\raw\train")
 hany2 = Normalizer().strip_gutenberg(hany)
 
-#print(hany)
+print(hany2)
 
 
