@@ -84,7 +84,7 @@ class Normalizer:
         return text   
 #tests
 
-#"""
+"""
 #works for hany
 TRAIN_RAW_DIR="D:\\AI\Python\practice\\ngram_capstone\\ngram_rep\\ngram-predictor\data\\raw\\train"
 EVAL_RAW_DIR="D:\\AI\Python\practice\\ngram_capstone\\ngram_rep\\ngram-predictor\data\\raw\eval"
@@ -93,7 +93,7 @@ EVAL_TOKENS="D:\\AI\Python\practice\\ngram_capstone\\ngram_rep\\ngram-predictor\
 MODEL="D:\\AI\Python\practice\\ngram_capstone\\ngram_rep\\ngram-predictor\data\\model\model.json"
 VOCAB="D:\\AI\Python\practice\\ngram_capstone\\ngram_rep\\ngram-predictor\data\\model\vocab.json"
 #Testing branch
-#"""
+"""
 
 
 """
@@ -106,6 +106,17 @@ MODEL="c:\\AI\\python\\practice\\ngram_rep\\ngram-predictor\\data\\model\\model.
 VOCAB="c:\\AI\\python\\practice\\ngram_rep\\ngram-predictor\\data\\model\\vocab.json"
 """
 
+#"""
+#works for selim
+TRAIN_RAW_DIR="C:\\Users\\sabdelra\\N_Gram\\ngram_rep\\ngram-predictor\data\\raw\\train"
+EVAL_RAW_DIR="C:\\Users\\sabdelra\\N_Gram\\ngram_rep\\ngram-predictor\data\\raw\\eval"
+TRAIN_TOKENS="C:\\Users\\sabdelra\\N_Gram\\ngram_rep\\ngram-predictor\data\\processed\\train_tokens.txt"
+EVAL_TOKENS="C:\\Users\\sabdelra\\N_Gram\\ngram_rep\\ngram-predictor\data\\processed\\eval_tokens.txt"
+MODEL="C:\\Users\\sabdelra\\N_Gram\\ngram_rep\\ngram-predictor\data\\model\model.json"
+VOCAB="C:\\Users\\sabdelra\\N_Gram\\ngram_rep\\ngram-predictor\data\\model\vocab.json"
+#Testing branch
+#"""
+
 UNK_THRESHOLD=3
 TOP_K=3
 NGRAM_ORDER=4
@@ -116,3 +127,4 @@ hany4a = Normalizer().sentence_tokenize(hany3)
 ##hany4b = Normalizer().word_tokenize(hany4a)
 hany5 = Normalizer().write_list_to_file(hany4a,'',TRAIN_TOKENS)
 #print(hany4b)
+
