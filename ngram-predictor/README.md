@@ -1,0 +1,95 @@
+# ngram_rep
+
+**Repository to ngram capstone Assignment**
+
+This capstone project consolidates the Python programming, software engineering, and AI fundamentals covered in the course. It builds a next-word prediction system from scratch using an n-gram language model — _a statistical approach to AI_.
+
+The project is structured as four core modules plus one optional extra credit module: data preparation, model training, inference, and a CLI. A Streamlit UI is available as an optional extra credit module.
+
+
+
+# Requirements
+
+Python version: Python 3.14.3
+
+Note: _install dependencies via requirements.txt_
+
+
+# Setup 
+clone the repo; create and activate an Anaconda environment; install dependencies; populate config/.env; download raw .txt files into the correct folders.
+
+# Usage 
+step-by-step commands to run each step via main.py --step. If you implemented the Streamlit UI, include the command to launch it separately.
+
+# Project Structure
+
+ngram-predictor/
+
+├── config/
+
+│   &emsp;└── .env
+
+├── data/
+
+│   &emsp;├── raw/
+
+│   &emsp;│   &emsp;├── train/          # Four training books (.txt)
+
+│   &emsp;│   &emsp;└── eval/           # One evaluation book (.txt) — extra credit only
+
+│   &emsp;├── processed/
+
+│   &emsp;│   &emsp;├── train\_tokens.txt
+
+│   &emsp;│   &emsp;└── eval\_tokens.txt # Extra credit only
+
+
+│   &emsp;└── model/
+
+│       &emsp;├── model.json      # Generated — do not commit
+
+│       &emsp;└── vocab.json      # Generated — do not commit
+
+├── src/
+
+│   &emsp;├── data\_prep/
+
+│   &emsp;│   &emsp;└── normalizer.py      # Normalizer class
+
+│   &emsp;├── model/
+
+│   &emsp;│   &emsp;└── ngram\_model.py     # NGramModel class
+
+│   &emsp;├── inference/
+
+│   &emsp;│   &emsp;└── predictor.py       # Predictor class
+
+│   &emsp;├── ui/
+
+│   &emsp;│   &emsp;└── app.py             # PredictorUI class          # Extra credit
+
+│   &emsp;└── evaluation/
+
+│       &emsp;└── evaluator.py       # Evaluator class            # Extra credit
+
+├── main.py                    # Single entry point — CLI and wiring
+
+├── tests/
+
+│   &emsp;├── test\_data\_prep.py      # Extra credit
+
+│   &emsp;├── test\_model.py          # Extra credit
+
+│   &emsp;├── test\_inference.py      # Extra credit
+
+
+│   &emsp;├── test\_ui.py             # Extra credit
+
+
+│   &emsp;└── test\_evaluation.py     # Extra credit
+
+├── .gitignore
+
+├── requirements.txt
+
+└── README.md
