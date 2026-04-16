@@ -195,8 +195,8 @@ class NGramModel:
         """
         load_dotenv(dotenv_path="config/.env")
 
-        ngram_order = int(os.getenv("NGRAM_ORDER", 4))
-        unk_threshold = int(os.getenv("UNK_THRESHOLD", 1))
+        ngram_order = int(os.getenv("NGRAM_ORDER"))
+        unk_threshold = int(os.getenv("UNK_THRESHOLD"))
 
         return cls(
             ngram_order=ngram_order,
