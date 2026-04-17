@@ -16,7 +16,14 @@ from dotenv import load_dotenv
 from src.data_prep.normalizer import Normalizer
 from src.inference.predictor import Predictor
 from src.model.ngram_model import NGramModel
+import logging
 
+# Configure to show messages at INFO level and above
+logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+
+logging.debug("This will not be shown")  # Level 10
+logging.info("Application started")      # Level 20
+logging.warning("Something is odd")      # Level 30
 
 def run_dataprep(normalizer: Normalizer, train_raw_dir: str, train_tokens_path: str) -> None:
     """

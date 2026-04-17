@@ -8,15 +8,13 @@ from nltk.tokenize import sent_tokenize
 
 class Normalizer:
     """
-    This class describes the module's responsibility: loading, cleaning, tokenizing, and saving the corpus.
+    Load, clean, normalize, tokenize, and save corpus text.
 
-    Parameters:
-    Text file
+    This class is used in two contexts:
+    1. Data preparation on full raw text files.
+    2. Inference-time normalization on a single user input string.
+    """
 
-    Returns:
-    tokenized file
-
-    """    
     def load(self,folder_path: str) -> str:
         """
         Load all .txt files in a folder.

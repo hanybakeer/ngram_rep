@@ -207,7 +207,20 @@ class NGramModel:
 # -------------------------------------------------
 # Optional entry point
 # -------------------------------------------------
-def main():
+#def main():
+#    token_file = "data/processed/train_tokens.txt"
+#    model_out = "data/model/model.json"
+#    vocab_out = "data/model/vocab.json"
+
+    #model = NGramModel.from_env()
+    #model.build_vocab(token_file)
+    #model.build_counts_and_probabilities(token_file)
+    #model.save_model(model_out)
+    #model.save_vocab(vocab_out)
+
+
+if __name__ == "__main__":
+    #main()
     token_file = "data/processed/train_tokens.txt"
     model_out = "data/model/model.json"
     vocab_out = "data/model/vocab.json"
@@ -217,7 +230,3 @@ def main():
     model.build_counts_and_probabilities(token_file)
     model.save_model(model_out)
     model.save_vocab(vocab_out)
-
-
-if __name__ == "__main__":
-    main()
