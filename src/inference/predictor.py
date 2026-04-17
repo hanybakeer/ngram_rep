@@ -64,7 +64,7 @@ class Predictor:
         Returns:
         List[str]: Context words (length <= NGRAM_ORDER - 1)
         """
-        normalized_text = self.normalizer.normalizer(text)
+        normalized_text = self.normalizer.normalize(text)
         tokens = normalized_text.split()
 
         return tokens[-(self.ngram_order - 1):]
@@ -128,12 +128,12 @@ class Predictor:
 
         return [word for word, _ in sorted_words[:k]]
 
-"""
+
 if __name__ == "__main__":
     load_dotenv(dotenv_path="config/.env")
     model = NGramModel.from_env()
     model.load("data/model/model.json", "data/model/vocab.json")
     normalizer = Normalizer()
     predictor = Predictor(model, normalizer)
-    print(predictor.predict_next("this is"))
-"""
+    print(predictor.predict_next("the"))
+
