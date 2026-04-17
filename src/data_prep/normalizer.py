@@ -182,20 +182,9 @@ class Normalizer:
  
 
 if __name__=="__main__":
-    load_dotenv(dotenv_path='config/.env') 
-    #try:
-    #    nltk.data.find("tokenizers/punkt")
-    #except LookupError:
-       # nltk.download("punkt")
-       # nltk.download("punkt_tab")
-    tokenized_sentences = Normalizer().prepare_corpus(os.getenv("TRAIN_RAW_DIR"))
-    Normalizer().save(tokenized_sentences, os.getenv("TRAIN_TOKENS"))
-    print(f"Data preparation complete:")
-    #hany = Normalizer().load(os.getenv("TRAIN_RAW_DIR"))
-    #hany2 = Normalizer().strip_gutenberg(hany)
-    #hany3 = Normalizer().normalizer(hany2)
-    #hany4a = Normalizer().sentence_tokenize(hany3)
-    ##hany4b = Normalizer().word_tokenize(hany4a)
-    #hany5 = Normalizer().write_list_to_file(hany4a,'',os.getenv("TRAIN_TOKENS"))
-    #print(hany4b)
+    #   load_dotenv(dotenv_path='config/.env')
 
+    #   tokenized_sentences = Normalizer().prepare_corpus(os.getenv("TRAIN_RAW_DIR"))
+    #   Normalizer().save(tokenized_sentences, os.getenv("TRAIN_TOKENS"))
+    #   print(f"Data preparation complete:")
+    pass
