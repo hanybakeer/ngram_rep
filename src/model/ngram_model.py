@@ -193,7 +193,7 @@ class NGramModel:
         """
         Initialize model using values from config/.env.
         """
-        load_dotenv(dotenv_path="config/.env")
+        #load_dotenv(dotenv_path="config/.env")
 
         ngram_order = int(os.getenv("NGRAM_ORDER"))
         unk_threshold = int(os.getenv("UNK_THRESHOLD"))
@@ -221,12 +221,13 @@ class NGramModel:
 
 if __name__ == "__main__":
     #main()
-    token_file = "data/processed/train_tokens.txt"
-    model_out = "data/model/model.json"
-    vocab_out = "data/model/vocab.json"
+    #token_file = "data/processed/train_tokens.txt"
+    #model_out = "data/model/model.json"
+    #vocab_out = "data/model/vocab.json"
 
-    model = NGramModel.from_env()
-    model.build_vocab(token_file)
-    model.build_counts_and_probabilities(token_file)
-    model.save_model(model_out)
-    model.save_vocab(vocab_out)
+    #model = NGramModel.from_env()
+    #model.build_vocab(token_file)
+    #model.build_counts_and_probabilities(token_file)
+    #model.save_model(model_out)
+    #model.save_vocab(vocab_out)
+    pass

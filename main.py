@@ -18,8 +18,9 @@ from src.inference.predictor import Predictor
 from src.model.ngram_model import NGramModel
 import logging
 
-# Configure to show messages at INFO level and above
-logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+log_level = os.getenv("LOG_LEVEL", "INFO").upper()
+# Configure logging level from .env (defaults to INFO if not provided)
+logging.basicConfig(level=log_level, format='%(levelname)s: %(message)s')
 
 logging.debug("This will not be shown")  # Level 10
 logging.info("Application started")      # Level 20

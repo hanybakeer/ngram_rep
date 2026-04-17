@@ -130,10 +130,12 @@ class Predictor:
 
 
 if __name__ == "__main__":
-    load_dotenv(dotenv_path="config/.env")
-    model = NGramModel.from_env()
-    model.load("data/model/model.json", "data/model/vocab.json")
-    normalizer = Normalizer()
-    predictor = Predictor(model, normalizer)
-    print(predictor.predict_next("the"))
-
+   
+    #load_dotenv(dotenv_path="config/.env")
+    #model = NGramModel.from_env()
+    #model.load("data/model/model.json", "data/model/vocab.json")
+    #normalizer = Normalizer()
+    #predictor = Predictor(model, normalizer)
+    #print(predictor.predict_next("the"))
+    
+    pass
